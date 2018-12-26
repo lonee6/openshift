@@ -5,7 +5,7 @@ ENV CONFIG_JSON=none CERT_PEM=none KEY_PEM=none VER=4.8
 RUN apk add --no-cache --virtual .build-deps ca-certificates curl \
  && VER="$(curl -H 'Cache-Control: no-cache' -s "https://api.github.com/repos/v2ray/v2ray-core/releases/latest" | grep 'tag_name' | cut -d\" -f4)" \
  && echo $VER \
- && VER=4.8 \
+ && $VER=4.8 \
  && touch /$VER \
  && mkdir -m 777 /v2raybin \ 
  && cd /v2raybin \
